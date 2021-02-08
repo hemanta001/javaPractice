@@ -11,7 +11,6 @@ public class Rectangle {
     public void perimeter(float length,int breadth) {//void type method with two arguments
         float perimeter = 2 * (length + breadth);
         System.out.println("The perimeter of rectangle is " + perimeter);
-
     }
     public String area(String fullName){//return type method with one arguments
 
