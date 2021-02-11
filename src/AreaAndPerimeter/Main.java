@@ -11,5 +11,4 @@ public class Main {
         square.area();
         square.perimeter();
     }
-
 }
