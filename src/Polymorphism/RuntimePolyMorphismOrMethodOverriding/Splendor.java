@@ -5,7 +5,7 @@ class Splendor extends Bike{
         run();
     }
 
-//    protected void run(){
-//        System.out.println("running safely with 60km");
-//    }
+    protected void run(){
+        System.out.println("running safely with 60km");
+    }
 }
