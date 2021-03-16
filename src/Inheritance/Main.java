@@ -4,6 +4,8 @@ package Inheritance;
  * Created by HEMANT on 13/05/2016.
  */
 public class Main {
+    static final float pieValue=3.14f;
+
     public static void main(String args[]){
      Rectangle r=new Rectangle();
         r.setProperties();
