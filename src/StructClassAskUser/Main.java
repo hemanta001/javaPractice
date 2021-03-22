@@ -6,5 +6,6 @@ public class Main {
         SubClass subClass = new SubClass();
         subClass.askUSer();
         subClass.printUser();
+
     }
 }
