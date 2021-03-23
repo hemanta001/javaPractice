@@ -10,10 +10,13 @@ public class StudentService {
         Scanner scanner=new Scanner(System.in);
         System.out.println("enter the first name");
         String firstName= scanner.next();
+        student.setFirstName(firstName);
         System.out.println("enter the second name");
         String secondName= scanner.next();
+        student.setLastName(secondName);
         System.out.println("enter the gender");
         String gender= scanner.next();
+        student.setGender(gender);
         System.out.println("enter the roll no");
         int rollNumber= scanner.nextInt();
         System.out.println("enter the age");
