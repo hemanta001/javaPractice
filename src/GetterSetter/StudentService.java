@@ -33,6 +33,13 @@ public class StudentService {
 
     public void getStudent() {
         for (int i = 0; i < studentList.size(); i++) {
+            System.out.println("The first name is " + studentList.get(i).getFirstName());
+            System.out.println("The last name is " + studentList.get(i).getLastName());
+            System.out.println("The gender is " + studentList.get(i).getGender());
+            System.out.println("The age is " + studentList.get(i).getAge());
+            System.out.println("The roll no is " + studentList.get(i).getRollNumber());
+        }
+        for (Student student : studentList) {
             System.out.println("The first name is " + student.getFirstName());
             System.out.println("The last name is " + student.getLastName());
             System.out.println("The gender is " + student.getGender());
