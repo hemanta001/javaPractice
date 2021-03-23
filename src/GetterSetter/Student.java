@@ -7,22 +7,22 @@ public class Student {
     int rollNumber;
     int age;
 
-    public void setFirstName() {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public void setLastName() {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public  void setGender(){
+    public  void setGender(String gender){
         this.gender= gender;
     }
-    public  void setRollNumber(){
+    public  void setRollNumber(int rollNumber){
         this.rollNumber=rollNumber;
 
     }
 
-    public void setAge() {
+    public void setAge(int age) {
         this.age = age;
     }
 
