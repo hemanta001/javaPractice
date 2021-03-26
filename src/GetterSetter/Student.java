@@ -1,6 +1,7 @@
 package GetterSetter;
 
 public class Student {
+    //properties
     private String firstName;
     private String lastName;
     String gender;

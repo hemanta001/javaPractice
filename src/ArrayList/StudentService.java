@@ -47,13 +47,7 @@ public class StudentService {
             System.out.println("The age is " + studentList.get(i).getAge());
             System.out.println("The roll no is " + studentList.get(i).getRollNumber());
         }
-        for (Student student : studentList) {
-            System.out.println("The first name is " + student.getFirstName());
-            System.out.println("The last name is " + student.getLastName());
-            System.out.println("The gender is " + student.getGender());
-            System.out.println("The age is " + student.getAge());
-            System.out.println("The roll no is " + student.getRollNumber());
-        }
+
     }
 
 }
