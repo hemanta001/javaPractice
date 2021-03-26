@@ -5,5 +5,6 @@ public class Main {
         StudentService studentService=new StudentService();
         studentService.setStudent();
         studentService.getStudent();
+
     }
 }
