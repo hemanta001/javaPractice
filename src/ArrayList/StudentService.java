@@ -12,12 +12,8 @@ public class StudentService {
         student = new Student();
         Scanner scanner = new Scanner(System.in);
         System.out.println("number of array to print");
-        String[] string = new String[scanner.nextInt()];
-        scanner.nextLine();
-        for (int i = 0; i < string.length; i++)  {
-
-        }
-        for(String str: string)   {
+        int numberOfStudents=scanner.nextInt();
+        for(int i=0;i<numberOfStudents;i++){
             scanner = new Scanner(System.in);
             System.out.println("enter the first name");
             String firstName = scanner.next();
@@ -36,7 +32,6 @@ public class StudentService {
             student.setAge(age);
             studentList.add(student);
         }
-
     }
 
     public void getStudent() {
@@ -47,6 +42,22 @@ public class StudentService {
             System.out.println("The age is " + studentList.get(i).getAge());
             System.out.println("The roll no is " + studentList.get(i).getRollNumber());
         }
+
+        for (Student student:studentList) {
+            System.out.println("The first name is " + student.getFirstName());
+            System.out.println("The last name is " + student.getLastName());
+            System.out.println("The gender is " + student.getGender());
+            System.out.println("The age is " + student.getAge());
+            System.out.println("The roll no is " + student.getRollNumber());
+        }
+
+        studentList.forEach(student1 -> {
+            System.out.println("The first name is " + student1.getFirstName());
+            System.out.println("The last name is " + student1.getLastName());
+            System.out.println("The gender is " + student1.getGender());
+            System.out.println("The age is " + student1.getAge());
+            System.out.println("The roll no is " + student1.getRollNumber());
+        });
 
     }
 
