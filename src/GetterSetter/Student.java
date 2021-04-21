@@ -9,13 +9,16 @@ public class Student {
     int age;
 
     public void setFirstName(String firstName) {
+
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
     public  void setGender(String gender){
+
         this.gender= gender;
     }
     public  void setRollNumber(int rollNumber){
@@ -24,6 +27,7 @@ public class Student {
     }
 
     public void setAge(int age) {
+
         this.age = age;
     }
 
@@ -31,18 +35,22 @@ public class Student {
         return lastName;
     }
     public String getFirstName(){
+
         return firstName;
     }
 
     public String getGender() {
+
         return gender;
     }
 
     public int getRollNumber() {
+
         return rollNumber;
     }
 
     public int getAge() {
+
         return age;
     }
 }

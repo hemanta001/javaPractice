@@ -13,10 +13,6 @@ public class StudentService {
         Scanner scanner = new Scanner(System.in);
         System.out.println("number of array to print");
         String[] string = new String[scanner.nextInt()];
-        scanner.nextLine();
-        for (int i = 0; i < string.length; i++)  {
-
-        }
         for(String str: string)   {
             scanner = new Scanner(System.in);
             System.out.println("enter the first name");

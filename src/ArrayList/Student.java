@@ -3,9 +3,9 @@ package ArrayList;
 public class Student {
     private String firstName;
     private String lastName;
-    String gender;
-    int rollNumber;
-    int age;
+   private String gender;
+    private int rollNumber;
+    private int age;
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
