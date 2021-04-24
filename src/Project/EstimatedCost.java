@@ -7,21 +7,23 @@ import java.util.Scanner;
 public class EstimatedCost {
     BudgetList budgetList;
     List<BudgetList> list = new ArrayList<>();
+    int sum=0;
     public void pass(){
         budgetList = new BudgetList();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Estimated cost");
-        String firstItem = scanner.next();
+        int firstItem = scanner.nextInt();
         System.out.println("Estimated cost");
-        String secondItem = scanner.next();
+        int secondItem = scanner.nextInt();
         System.out.println("Estimated cost");
-        String thirdItem = scanner.next();
+        int thirdItem = scanner.nextInt();
         System.out.println("Estimated cost");
-        String fourthItem = scanner.next();
+        int fourthItem = scanner.nextInt();
         System.out.println("Estimated cost");
-        String fifthItem = scanner.next();
+        int fifthItem = scanner.nextInt();
         list.add(budgetList);
-        System.out.println(list);
+        sum=fifthItem+secondItem+thirdItem+fourthItem+fifthItem;
+        System.out.println("the total money is"+sum);
     }
 
 }

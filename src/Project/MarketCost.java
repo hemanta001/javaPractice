@@ -7,20 +7,23 @@ import java.util.Scanner;
 public class MarketCost extends BudgetList{
     BudgetList budgetList;
     List<BudgetList> list = new ArrayList<>();
+    int sum2=0;
     public void money(){
         budgetList = new BudgetList();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Market cost");
-        String firstItem = scanner.next();
+        int firstItem = scanner.nextInt();
         System.out.println("Market cost");
-        String secondItem = scanner.next();
+        int secondItem = scanner.nextInt();
         System.out.println("Market cost");
-        String thirdItem = scanner.next();
+        int thirdItem = scanner.nextInt();
         System.out.println("Market cost");
-        String fourthItem = scanner.next();
+        int fourthItem = scanner.nextInt();
         System.out.println("Market cost");
-        String fifthItem = scanner.next();
+        int fifthItem = scanner.nextInt();
         list.add(budgetList);
-        System.out.println(list);
+        sum2=fifthItem+secondItem+thirdItem+fourthItem+fifthItem;
+        System.out.println("the total money is"+sum2);
     }
+
 }

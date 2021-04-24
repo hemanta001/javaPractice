@@ -22,7 +22,7 @@ public class ProductName {
             System.out.println("Name of fifth item");
             String fifthItem = scanner.next();
             list.add(budgetList);
-        System.out.println(list);
+
 
         }
 

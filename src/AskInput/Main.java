@@ -12,5 +12,6 @@ public class Main {
         int breadth = scanner.nextInt();
         int perimeter = 2 * (length + breadth);
         System.out.println("The perimter of rectangle is "+perimeter);
+        System.out.println(length);
     }
 }
