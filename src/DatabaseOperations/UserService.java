@@ -21,11 +21,13 @@ public class UserService {
                 System.out.print(", FIRSTNAME: " + rs.getString("firstName"));
                 System.out.print(", LASTNAME: " + rs.getString("lastName"));
                 System.out.println(", EMAIL: " + rs.getString("email"));
+                System.out.println(", USERNAME: " + rs.getString("username"));
+
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
 }
