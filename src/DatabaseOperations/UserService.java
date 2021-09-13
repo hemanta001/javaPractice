@@ -14,8 +14,8 @@ public class UserService {
         try {
             String query = "select * from user";
             Connection connection = new DatabaseConnection().connectToDB();
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet rs = preparedStatement.executeQuery();
             User user = null;
             while (rs.next()) {
                 user = new User();
@@ -26,6 +26,7 @@ public class UserService {
                 user.setUsername(rs.getString("username"));
                 userList.add(user);
             }
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -33,7 +34,7 @@ public class UserService {
     }
 
     public User insertUser() {
-        User user = askUserFromKeyBoard();
+        User user = askUserFromKeyBoard("insert");
         try {
             Connection connection = new DatabaseConnection().connectToDB();
             String query = " insert into user (firstName, lastName, email, username)"
@@ -57,9 +58,80 @@ public class UserService {
         }
     }
 
-    public User askUserFromKeyBoard() {
+    public User updateUser() {
+        User user = askUserFromKeyBoard("update");
+        try {
+            String query = "update user set firstName = ?,lastName=?,email=?,username=? where id = ?";
+            Connection connection = new DatabaseConnection().connectToDB();
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString(1, user.getFirstName());
+            preparedStmt.setString(2, user.getLastName());
+            preparedStmt.setString(3, user.getEmail());
+            preparedStmt.setString(4, user.getUsername());
+            preparedStmt.setLong(5, user.getId());
+            preparedStmt.execute();
+            connection.close();
+            return user;
+        } catch (SQLException e) {
+            System.err.println("Got an exception!");
+            System.err.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public User readUserById() {
+        System.out.println("Enter id to get user");
+        User user = null;
+        try {
+            String query = "select * from user where id=?";
+            Connection connection = new DatabaseConnection().connectToDB();
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setLong(1, askIdFromKeyBoard());
+            ResultSet rs = preparedStmt.executeQuery();
+            while (rs.next()) {
+                user = new User();
+                user.setId(rs.getLong("id"));
+                user.setFirstName(rs.getString("firstName"));
+                user.setLastName(rs.getString("lastName"));
+                user.setEmail(rs.getString("email"));
+                user.setUsername(rs.getString("username"));
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public int deleteUserById() {
+        int i=0;
+        try {
+            String query = "delete from user where id=?";
+            Connection connection = new DatabaseConnection().connectToDB();
+            System.out.println("Enter id to delete user");
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setLong(1, askIdFromKeyBoard());
+            i = preparedStmt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+    public Long askIdFromKeyBoard() {
+        Scanner scanner = new Scanner(System.in);
+        Long id = scanner.nextLong();
+        return id;
+    }
+
+    public User askUserFromKeyBoard(String action) {
         User user = new User();
         Scanner scanner = new Scanner(System.in);
+        if (action.equals("update")) {
+            System.out.println("Enter id to update");
+            user.setId(askIdFromKeyBoard());
+        }
         System.out.println("Enter first name");
         String firstName = scanner.nextLine();
         user.setFirstName(firstName);
